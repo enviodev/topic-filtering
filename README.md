@@ -2,11 +2,13 @@
 
 _For a complete guide to all [Envio](https://envio.dev) indexer features, visit the [documentation website](https://docs.envio.dev)._
 
-This is example expands on our wildcard indexing example which shows us how to index with all event with event signature. This example adds another feature which filter those events further based on topic from those events.
+This example builds on our wildcard indexing example, which demonstrates how to index all events that match a given event signature.
+
+In this version, we add an additional feature that filters those events further based on specific topics within the event data.
 
 You can learn more about Topic Filtering in the documentation: [https://docs.envio.dev/docs/HyperIndex/wildcard-indexing#topic-filtering](https://docs.envio.dev/docs/HyperIndex/wildcard-indexing#topic-filtering)
 
-To enable wildcard indexing, simply pass `eventFilters: { TOPIC_NAME: TOPIC_VALUE}` in the handler configuration:
+To enable topic filtering, simply pass `eventFilters: { TOPIC_NAME: TOPIC_VALUE }` in the handler configuration.
 
 ```ts
 ERC20.Transfer.handler(
@@ -46,4 +48,4 @@ pnpm codegen
 
 ## GraphQL Playground
 
-While indexer running, visit the Envio Console([https://envio.dev/console](https://envio.dev/console)) to open the GraphQL Playground and query your indexed data.
+While indexer is running, visit the Envio Console([https://envio.dev/console](https://envio.dev/console)) to open the GraphQL Playground and query your indexed data.
