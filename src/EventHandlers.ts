@@ -15,9 +15,12 @@ ERC20.Transfer.handler(
   },
   {
     wildcard: true,
-    eventFilters: {
-      from: ZERO_ADDRESS,
-      to: ZERO_ADDRESS,
-    }
+    eventFilters: [
+      {
+        from: ZERO_ADDRESS,
+      }, {
+        to: ZERO_ADDRESS,
+      }
+    ]
   },
 );

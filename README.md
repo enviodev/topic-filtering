@@ -17,9 +17,10 @@ ERC20.Transfer.handler(
     },
     { 
         wildcard: true, 
-        eventFilters: { 
-            TOPIC_NAME: TOPIC_VALUE
-        } 
+        eventFilters: [
+            { TOPIC_NAME: TOPIC_VALUE}, // filter 1
+            { TOPIC_NAME: TOPIC_VALUE}  // filter 2
+        ] 
     }
 );
 ```

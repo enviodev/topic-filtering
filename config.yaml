@@ -3,7 +3,7 @@ name: Topic Filtering
 description: Index all events matching a specified event signature and topics without requiring the contract address
 networks:
     - id: 1 # Ethereum Mainnet
-      start_block: 23480542
+      start_block: 23596675
       contracts:
           - name: ERC20
             handler: src/EventHandlers.ts
