@@ -2,7 +2,6 @@ import { ERC20 } from "generated";
 
 const ZERO_ADDRESS = "0x0000000000000000000000000000000000000000";
 
-
 ERC20.Transfer.handler(
   async ({ event, context }) => {
     context.Transfer.set({
@@ -18,9 +17,10 @@ ERC20.Transfer.handler(
     eventFilters: [
       {
         from: ZERO_ADDRESS,
-      }, {
+      },
+      {
         to: ZERO_ADDRESS,
-      }
-    ]
-  },
+      },
+    ],
+  }
 );
