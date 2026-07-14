@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=./node_modules/envio/evm.schema.json
 name: Topic Filtering
 description: Index all events matching a specified event signature and topics without requiring the contract address
-networks:
+chains:
     - id: 1 # Ethereum Mainnet
       start_block: 23596675
       contracts:
@@ -11,5 +11,3 @@ networks:
                 - event: "Transfer(address indexed from, address indexed to, uint256 value)"
 
 # https://docs.envio.dev/docs/HyperIndex/multichain-indexing#unordered-multichain-mode
-unordered_multichain_mode: true
-preload_handlers: true

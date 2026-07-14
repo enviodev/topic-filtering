@@ -1,8 +1,18 @@
-import { ERC20 } from "generated";
+import { indexer } from "envio";
+
 
 const ZERO_ADDRESS = "0x0000000000000000000000000000000000000000";
 
-ERC20.Transfer.handler(
+indexer.onEvent(
+  { contract: "ERC20", event: "Transfer", wildcard: true,
+    eventFilters: [
+      {
+        from: ZERO_ADDRESS,
+      },
+      {
+        to: ZERO_ADDRESS,
+      },
+    ], },
   async ({ event, context }) => {
     context.Transfer.set({
       id: `${event.chainId}_${event.block.number}_${event.logIndex}`,
@@ -11,16 +21,5 @@ ERC20.Transfer.handler(
       to: event.params.to,
       contract: event.srcAddress,
     });
-  },
-  {
-    wildcard: true,
-    eventFilters: [
-      {
-        from: ZERO_ADDRESS,
-      },
-      {
-        to: ZERO_ADDRESS,
-      },
-    ],
   }
 );
